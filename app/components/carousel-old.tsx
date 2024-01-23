@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import { cn } from '~/lib/utils';
 
 interface CarouselProps {
-  children: React.ReactElement[];
+  children: Array<React.ReactNode>;
 }
 
 export function Carousel({ children }: CarouselProps) {

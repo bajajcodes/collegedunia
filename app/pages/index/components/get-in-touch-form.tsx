@@ -9,7 +9,7 @@ import { useFetcher } from '@remix-run/react';
 import { Label } from '~/components/ui/label';
 import type { GetInTouchFormSchema } from '~/data/schema';
 import type { ActionErrors } from '~/types/validation-action';
-import { cn } from '~/lib/utils';
+import { cn, postFormData } from '~/lib/utils';
 import { useEffect, useRef } from 'react';
 import { itemsCourseLookingFor } from '~/data/form.data';
 
@@ -38,10 +38,11 @@ export function GetInTouchForm({
   const actionData = fetcher.data;
 
   const isSubmitting = fetcher.state === 'submitting';
-  const isSubmitted = Boolean(fetcher.data?.data && !fetcher.data.errors);
 
   useEffect(() => {
-    if (!isSubmitted) return;
+    const isSubmitted = Boolean(fetcher.data?.data && !fetcher.data.errors);
+    if (!isSubmitted || fetcher.state !== 'idle') return;
+    postFormData(fetcher.data?.data, toast);
     toast({
       title: 'You submitted the following values:',
       description: (
@@ -53,8 +54,9 @@ export function GetInTouchForm({
       ),
     });
     formRef.current?.reset();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSubmitted]);
+  }, [fetcher.state]);
 
   return (
     <fetcher.Form

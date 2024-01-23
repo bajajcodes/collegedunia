@@ -1,8 +1,9 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import type { ZodError, ZodSchema } from "zod";
-import type { $TSFixME } from "~/types";
-import type { ActionErrors } from "~/types/validation-action";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import type { ZodError, ZodSchema } from 'zod';
+import { siteConfig } from '~/config/site';
+import type { $TSFixME } from '~/types';
+import type { ActionErrors } from '~/types/validation-action';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -25,7 +26,7 @@ export async function validationAction<ActionInput>({
     body[key] =
       values.length > 1
         ? values
-        : key === "courseLookingFor"
+        : key === 'courseLookingFor'
         ? [values[0]]
         : values[0];
   }
@@ -49,3 +50,27 @@ export async function validationAction<ActionInput>({
     };
   }
 }
+
+export const postFormData = async (formData: $TSFixME, toast: $TSFixME) => {
+  try {
+    // Encode form data in x-www-form-urlencoded format
+    const urlSearchParams = new URLSearchParams();
+    for (const key in formData) {
+      urlSearchParams.append(key, formData[key]);
+    }
+
+    const response = await fetch(siteConfig.FORM_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded  ',
+      },
+      body: urlSearchParams.toString(),
+    });
+    await response.json();
+  } catch (postFormDataError: $TSFixME) {
+    console.error({ postFormDataError });
+    toast({
+      title: postFormDataError?.message ?? 'Something Went Wrong',
+    });
+  }
+};

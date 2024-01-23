@@ -1,11 +1,11 @@
 import { Button } from './ui/button';
 import { Icons } from './icons';
+import { siteConfig } from '~/config/site';
+
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${siteConfig.contact.primaryNumber}`;
 
 export const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    // TODO: Replace 'your-whatsapp-url' with the actual WhatsApp chat URL
-    const whatsappUrl = 'https://api.whatsapp.com/send?phone=your-phone-number';
-
     window.open(whatsappUrl, '_blank');
   };
 
@@ -16,7 +16,7 @@ export const WhatsAppButton = () => {
     >
       <Icons.Whatsapp className="w-10 h-10 md:mr-2" />
 
-      <span className="text-sm">
+      <span className="hidden md:inline-block text-sm">
         CHAT WITH US <br />
         Typically replies within minutes!!
       </span>

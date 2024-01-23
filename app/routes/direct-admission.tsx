@@ -10,6 +10,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import { siteConfig } from '~/config/site';
 import { FormDirectAdmissionSchema } from '~/data/schema';
 import { validationAction } from '~/lib/utils';
 
@@ -35,24 +36,22 @@ export default function DirectAdmission() {
         <p className="capitalize font-bold text-orange-500">
           DON’T SETTLE FOR LESS
         </p>
-        <PageHeaderHeading className="capitalize">
-          Direct Admission
+        <PageHeaderHeading className="capitalize text-center">
+          Free Admission Consultation
         </PageHeaderHeading>
         <PageHeaderDescription className="leading-8 text-center">
-          Catalyst Education is a prominent{' '}
-          <strong>direct admission consultant</strong> that offers direct
-          admission to colleges in{' '}
-          <strong>
-            India especially in Pune, Mumbai, and other colleges of Maharashtra
-          </strong>
-          through institute level empty seats or management quota seats. We also
-          facilitate direct admission for NRI quota admission seats. With years
-          of experience, we have successfully placed numerous students in the
-          right institutions by providing reliable methodologies and
-          cost-effective services. Our team provides admission assistance,
-          guidance, and counseling for top colleges and universities in India
-          and abroad, particularly when finding the right place for admission
-          within a short period seems challenging.
+          <span className="leading-6">
+            {`${siteConfig.name} Pvt. Ltd. is a company dedicated to education consultants for personalized guidance.`}
+          </span>
+          &nbsp;
+          <span className="leading-6">
+            We specialize in providing expert guidance with a rich legacy of 14
+            years of experience. Our focus areas include MBA consultation,
+            engineering consultation, and medical admission consultation. We
+            understand that navigating the educational landscape can be complex,
+            and that's where our experienced education consultants come in to
+            simplify the process and guide you towards success.
+          </span>
         </PageHeaderDescription>
       </PageHeader>
 

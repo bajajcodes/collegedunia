@@ -1,4 +1,4 @@
-type IconProps = React.HTMLAttributes<SVGElement>;
+export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Logo = (props: IconProps) => (
   <svg
@@ -220,8 +220,8 @@ const Whatsapp = (props: IconProps) => (
         y2="137.092"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#57d163" />
-        <stop offset="1" stop-color="#23b33a" />
+        <stop offset="0" stopColor="#57d163" />
+        <stop offset="1" stopColor="#23b33a" />
       </linearGradient>
       <filter
         id="a"

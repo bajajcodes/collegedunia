@@ -1,10 +1,27 @@
-import type { MetaFunction } from "@remix-run/react";
-import { MapPinIcon, Clock3Icon, MessageCircleIcon } from "lucide-react";
-import { Card, CardContent, CardDescription } from "~/components/ui/card";
-import { GetInTouch } from "~/pages/index/components/get-in-touch";
+import type { ActionFunctionArgs } from '@remix-run/node';
+import { json } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/react';
+import { MapPinIcon, Clock3Icon, MessageCircleIcon } from 'lucide-react';
+import { Card, CardContent, CardDescription } from '~/components/ui/card';
+import { siteConfig } from '~/config/site';
+import { GetInTouchFormSchema } from '~/data/schema';
+import { validationAction } from '~/lib/utils';
+import { GetInTouch } from '~/pages/index/components/get-in-touch';
+import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
 
 export const meta: MetaFunction = () => {
-  return [{ title: "Contact Us" }];
+  return [{ title: 'Contact Us' }];
+};
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+  const { data, errors } = await validationAction<GetInTouchFormInput>({
+    request,
+    schema: GetInTouchFormSchema,
+  });
+  if (errors) {
+    return json({ errors });
+  }
+  return json({ data });
 };
 
 export default function ContactUs() {
@@ -15,7 +32,7 @@ export default function ContactUs() {
           title="catalysteducations"
           width="100%"
           height="100%"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Catalyst%20Education%20Consultancy,%20Hinjawadi%20Rd,%20Shankar%20Kalat%20Nagar,%20Wakad,%20Pune,%20Pimpri-Chinchwad,%20Maharashtra%20411057+(Catalyst%20Education%20Consultancy%20)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=5th%20Floor,%20Dhananjay%20Plaza,%20near%20Chellaram%20Diabetes%20Hospital,%20Bavdhan,%20Pune,%20Maharashtra%20411021)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
       </div>
       <div className="flex flex-col lg:flex-row max-w-5xl mx-4 my-auto md:m-auto">
@@ -29,7 +46,7 @@ export default function ContactUs() {
               <CardDescription className="flex flex-col flex-1 gap-2">
                 <span className="uppercase text-sm">Visit Us</span>
                 <span className="text-black text-base leading-6">
-                  COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
+                  {siteConfig.contact.address}
                 </span>
               </CardDescription>
             </CardContent>
@@ -42,9 +59,9 @@ export default function ContactUs() {
               <CardDescription className="flex flex-col flex-1 gap-2">
                 <span className="uppercase text-sm">Contact Us</span>
                 <span className="text-black text-base leading-6 flex flex-col gap-1 text-center">
-                  <span>+91 77579 20539</span>
-                  <span>+91 87673 31852</span>
-                  <span>contact@catalysteducations.com</span>
+                  <span>{siteConfig.contact.primaryNumber}</span>
+                  <span>{siteConfig.contact.secondaryNumber}</span>
+                  <span>{siteConfig.contact.email}</span>
                 </span>
               </CardDescription>
             </CardContent>

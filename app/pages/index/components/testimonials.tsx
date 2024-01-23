@@ -1,7 +1,15 @@
+import type { FeedbackCardProps } from '../../../components/feedback-card';
 import { FeedbackCard } from '../../../components/feedback-card';
 import { Carousel } from '../../../components/carousel-old';
 
-export function Testimonials() {
+type Testimonial = FeedbackCardProps & { key: string };
+
+export interface TestimonialsProps {
+  testimonials: Array<Testimonial>;
+}
+
+export function Testimonials({ testimonials }: TestimonialsProps) {
+  if (testimonials.length < 1) return null;
   return (
     <section
       id="clients"
@@ -9,7 +17,7 @@ export function Testimonials() {
     >
       <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
         <h2
-          className={`font-semibold xs:text-[48px] text-[40px] xs:leading-[76.8px] leading-[66.8px] w-full`}
+          className={`font-semibold xs:text-[48px] text-[40px] xs:leading-[66.8px] leading-[56.8px] w-full`}
         >
           What People are <br className="sm:block hidden" /> saying about us
         </h2>
@@ -23,29 +31,15 @@ export function Testimonials() {
           </p>
         </div>
       </div>
-      <Carousel>
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[1] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[2] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[3] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
-      </Carousel>
+      <div className="relative grid gap-4 md:grid-cols-[repeat(auto-fit,minmax(256px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(420px,1fr))] lg:flex ">
+        {testimonials.map((testimonial: Testimonial) => (
+          <FeedbackCard
+            {...testimonial}
+            key={testimonial.key}
+            className="w-full"
+          />
+        ))}
+      </div>
     </section>
   );
 }

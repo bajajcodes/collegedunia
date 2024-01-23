@@ -23,15 +23,16 @@ export function SiteFooter() {
 
           <p className="flex flex-col gap-4 text-white  mb-4">
             <span className="leading-6">
-              Innovative Technomics Pvt. Ltd. is a company dedicated to
-              enterprenual research and innovation.
+              {`${siteConfig.name} is a company dedicated to education consultants for personalized guidance.`}
             </span>
-            <span className="leading-6">
-              It specializes in Motor Starting Applications using self-developed
-              unique FCMA Technology ensuring smooth and harmonic Free starting
-              of Squirrel cage and Slip Ring Induction motors and Induction
-              Start-sychronous motors.
-            </span>
+            {/* <span className="leading-6">
+              We specialize in providing expert guidance with a rich legacy of
+              14 years of experience. Our focus areas include MBA consultation,
+              engineering consultation, and medical admission consultation. We
+              understand that navigating the educational landscape can be
+              complex, and that's where our experienced education consultants
+              come in to simplify the process and guide you towards success.
+            </span> */}
           </p>
 
           <div className="flex flex-col gap-4 mb-4">
@@ -39,22 +40,19 @@ export function SiteFooter() {
               <span>
                 <MapPinIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>
-                Plot No 1A/9, Sector 10, PCNTDA, Bhosari, Near Vishweshwar
-                Chowk, PUNE 411026, Maharashtra
-              </span>
+              <span>{siteConfig.contact.address}</span>
             </p>
             <p className="flex gap-2 items-center">
               <span>
                 <MailIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>marketing@itechnomics.com</span>
+              <span>{siteConfig.contact.email}</span>
             </p>
             <p className="flex gap-2 items-center">
               <span>
                 <PhoneIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>+91 94235 78196</span>
+              <span>{siteConfig.contact.primaryNumber}</span>
             </p>
           </div>
 
@@ -132,7 +130,7 @@ export function SiteFooter() {
                 title="catalysteducations"
                 width="100%"
                 height="100%"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Catalyst%20Education%20Consultancy,%20Hinjawadi%20Rd,%20Shankar%20Kalat%20Nagar,%20Wakad,%20Pune,%20Pimpri-Chinchwad,%20Maharashtra%20411057+(Catalyst%20Education%20Consultancy%20)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=5th%20Floor,%20Dhananjay%20Plaza,%20near%20Chellaram%20Diabetes%20Hospital,%20Bavdhan,%20Pune,%20Maharashtra%20411021)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               ></iframe>
             </div>
           </div>
@@ -140,8 +138,9 @@ export function SiteFooter() {
 
         <div className="col-span-full">
           <p className="text-center leading-loose md:text-left">
-            {`Copyright © ${siteConfig.year}`}{' '}
-            <span className="font-medium">{siteConfig.name}</span> | Powered by{' '}
+            {`Copyright © ${siteConfig.year}`}
+            <span className="font-medium">{siteConfig.name}</span> | Powered
+            by&nbsp;
             <a
               href={siteConfig.poweredBy.link}
               target="_blank"

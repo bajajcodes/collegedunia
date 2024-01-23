@@ -4,6 +4,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import { StyledPageHeaderHeading } from '~/components/typography';
 import { buttonVariants } from '~/components/ui/button';
 import {
   Card,
@@ -14,30 +15,48 @@ import {
 } from '~/components/ui/card';
 import { cn } from '~/lib/utils';
 
-export function OurConsultingServices() {
+export function OurConsultingServices({
+  showDescription = false,
+}: {
+  showDescription?: boolean;
+}) {
   return (
     <section className="flex flex-col items-center pb-8">
       <PageHeader className="pb-8 items-center">
         <p className="uppercase text-center text-orange-500">
           Don’t Settle For Less
         </p>
-        <PageHeaderHeading className="capitalize text-center md:text-left">
+        <StyledPageHeaderHeading className="capitalize text-center md:text-left">
           Our Consulting Services
-        </PageHeaderHeading>
+        </StyledPageHeaderHeading>
         <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-        <PageHeaderDescription className="leading-8 text-center">
-          Catalyst Education Consultancy is one of the{' '}
-          <strong>Leading Direct Admission Consultant</strong> in Pune, Mumbai
-          and all over India. We provide direct admission in Colleges in Pune,
-          Mumbai through institute level empty seats or the management quota
-          seats. We also help in{' '}
-          <strong>direct admissions for NRI Quota Admissions Seats.</strong>{' '}
-          With our rich experience and dependable methodologies combined with
-          cost-adequacy we have made incredible progress in putting the correct
-          student to the correct institution. We provide admission assistance,
-          guidance, and counseling for top colleges and universities in India
-          and abroad.
-        </PageHeaderDescription>
+        {showDescription && (
+          <PageHeaderDescription className="leading-8 text-center flex flex-col gap-4 ">
+            <span>
+              Step into Educom Guidance, your reliable ally in the realm of
+              education consulting services! We recognize the intricacies of
+              navigating the educational landscape and have seasoned education
+              consultants ready to streamline the journey towards your success.
+              Whether you're a ambitious student eyeing higher education, a
+              parent in pursuit of optimal educational opportunities for your
+              child, or an institution aiming to elevate academic excellence,
+              our team of seasoned education consultants is committed to
+              supporting you at every turn.
+            </span>
+            <span>
+              <strong>With a substantial legacy of 14 years</strong>, we excel
+              in education consulting services. Specializing in MBA
+              consultation, engineering consultation, and medical admission
+              consultation, we are devoted to ensuring that aspiring students
+              reach their academic and professional aspirations. What sets us
+              apart is our extensive network,{' '}
+              <strong>
+                connecting us with 100+ premier colleges across India
+              </strong>
+              .
+            </span>
+          </PageHeaderDescription>
+        )}
       </PageHeader>
       <article className="flex flex-col lg:flex-row">
         <Card className="bg-orange-500 p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">

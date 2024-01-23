@@ -15,4 +15,19 @@ function StyledHeading2({
   );
 }
 
-export { StyledHeading2 };
+function StyledPageHeaderHeading({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p
+      className={cn(
+        'text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]',
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export { StyledHeading2, StyledPageHeaderHeading };
