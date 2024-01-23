@@ -3,12 +3,11 @@ import type { MetaFunction } from '@remix-run/react';
 import { AlbumArtWork } from '~/components/album-card';
 import { Carousel } from '~/components/carousel-old';
 import { Page } from '~/components/page';
+import { PageHeader, PageHeaderDescription } from '~/components/page-header';
 import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from '~/components/page-header';
-import { StyledHeading2 } from '~/components/typography';
+  StyledHeading2,
+  StyledPageHeaderHeading,
+} from '~/components/typography';
 import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { engineeringPageAlbums } from '~/data/album.data';
 import { engineeringAdmission } from '~/data/pages.data';
@@ -37,9 +36,9 @@ export default function EngineeringAdmissions() {
     <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-6 items-center">
-          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+          <StyledPageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <div className="max-w-2xl">
             <AlbumArtWork
@@ -79,9 +78,9 @@ export default function EngineeringAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             TYPES OF ENGINEERING COURSES
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Engineering Branches
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <PageHeaderDescription className="text-center">
             Engineering encompasses various specialized branches, each offering
             distinct fields of study and career paths. Some common engineering
@@ -120,9 +119,9 @@ export default function EngineeringAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             Entrance Exams
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Engineering Entrance Exams
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <div className="container grid md:gap-4  max-w-2xl">
@@ -138,9 +137,9 @@ export default function EngineeringAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             TOP ENGINEERING COLLEGES
           </p>
-          <PageHeaderHeading className="capitalize text-center">
+          <StyledPageHeaderHeading className="capitalize text-center">
             We are Connected with Top Engineering Colleges in India
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <div className="grid gap-8 grid-cols-1 p-4 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:max-w-2xl lg:max-w-5xl m-auto">

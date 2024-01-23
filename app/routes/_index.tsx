@@ -23,6 +23,7 @@ import aboutUsThird from '~/images/about-us-3.jpg';
 import aboutUsFourth from '~/images/about-us-4.jpg';
 
 import { navConfig } from '~/config/nav';
+import { StyledPageHeaderHeading } from '~/components/typography';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
@@ -41,7 +42,7 @@ export default function Index() {
   return (
     <div className="container relative mb-8">
       <section className="relative h-[580px]">
-        <PageHeader className="pb-8 absolute top-16 right-1 z-40 w-full max-w-lg ">
+        <PageHeader className="pb-8 absolute top-16 left-1 z-40 w-full max-w-lg ">
           <p className="capitalize">TAKE YOUR FUTURE TO NEW HEIGHTS</p>
           <PageHeaderHeading className="capitalize">
             Explore expert education consultants for personalized guidance
@@ -69,9 +70,9 @@ export default function Index() {
       <Stats />
       <section className="flex flex-col items-center md:flex-row pt-4 pb-8 m-auto">
         <PageHeader className="items-center">
-          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+          <StyledPageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             About Us
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="flex flex-col gap-2 leading-8 text-center">
             <span>

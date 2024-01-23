@@ -2,11 +2,7 @@ import type { MetaFunction } from '@remix-run/react';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
 import { Page } from '~/components/page';
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from '~/components/page-header';
+import { PageHeader, PageHeaderDescription } from '~/components/page-header';
 import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { managementAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
@@ -14,6 +10,7 @@ import { WalletIcon } from 'lucide-react';
 import { cn } from '~/lib/utils';
 import { managementPageAlbums } from '~/data/album.data';
 import { AlbumArtWork } from '~/components/album-card';
+import { StyledPageHeaderHeading } from '~/components/typography';
 
 export const meta: MetaFunction = () => {
   return [
@@ -38,9 +35,9 @@ export default function ManagementAdmissions() {
     <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-8 items-center">
-          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+          <StyledPageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <div className="max-w-2xl">
             <AlbumArtWork
               albums={managementPageAlbums.whatSetUsApart}
@@ -55,9 +52,9 @@ export default function ManagementAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             TOP COLLEGES
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Top Management Colleges
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <PageHeaderDescription className="flex flex-col gap-2">
             <span>
               Choosing an MBA offers a dynamic skill set, fostering leadership
@@ -112,9 +109,9 @@ export default function ManagementAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             Entrance Exams
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Management Entrance Exams
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
       </section>
@@ -137,9 +134,9 @@ export default function ManagementAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             SCOPE
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Scope of Management
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="flex flex-col gap-4 text-center">
             <span>
@@ -197,9 +194,9 @@ export default function ManagementAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             Branches
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Streams Of Specialization in Management
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <Carousel>

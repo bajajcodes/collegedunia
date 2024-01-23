@@ -1,8 +1,8 @@
 import { GetInTouchForm } from './get-in-touch-form';
-import { PageHeaderHeading } from '../../../components/page-header';
 import React from 'react';
 import { cn } from '~/lib/utils';
 import { siteConfig } from '~/config/site';
+import { StyledPageHeaderHeading } from '~/components/typography';
 
 export function GetInTouch({
   showContactInfo = false,
@@ -18,9 +18,9 @@ export function GetInTouch({
         className
       )}
     >
-      <PageHeaderHeading className="uppercase mb-4">
+      <StyledPageHeaderHeading className="uppercase mb-4">
         GET IN TOUCH
-      </PageHeaderHeading>
+      </StyledPageHeaderHeading>
       <div className="flex flex-col md:flex-row gap-4">
         <GetInTouchForm className="flex-1" />
         {showContactInfo && (

@@ -2,11 +2,7 @@ import type { MetaFunction } from '@remix-run/react';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
 import { Page } from '~/components/page';
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from '~/components/page-header';
+import { PageHeader, PageHeaderDescription } from '~/components/page-header';
 import {
   Card,
   CardContent,
@@ -15,7 +11,10 @@ import {
 } from '~/components/ui/card';
 import { medicalAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
-import { StyledHeading2 } from '~/components/typography';
+import {
+  StyledHeading2,
+  StyledPageHeaderHeading,
+} from '~/components/typography';
 import { AlbumArtWork } from '~/components/album-card';
 import { medicalPageAlbums } from '~/data/album.data';
 const medicinePrograms = [
@@ -46,9 +45,9 @@ export default function MedicalAdmissions() {
     <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-8 items-center">
-          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+          <StyledPageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <div className="max-w-2xl">
             <AlbumArtWork
               albums={medicalPageAlbums.whatSetUsApart}
@@ -97,9 +96,9 @@ export default function MedicalAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             COURSES
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Types of Medical Courses
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="text-center">
             If you’re looking to pursue a career in the medical field, then
@@ -129,9 +128,9 @@ export default function MedicalAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             EXAMS
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
+          <StyledPageHeaderHeading className="capitalize text-center md:text-left">
             Medical Entrance Exams
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <div className="w-full bg-gradient-to-b from-white via-blue-100 to-blue-500 flex items-center">
@@ -171,9 +170,9 @@ export default function MedicalAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             We are Connected With
           </p>
-          <PageHeaderHeading className="capitalize text-center">
+          <StyledPageHeaderHeading className="capitalize text-center">
             Top Medical Colleges & Universities In India
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="text-center">
             <span className="mt-4 leading-8">

@@ -4,6 +4,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import { StyledPageHeaderHeading } from '~/components/typography';
 import { buttonVariants } from '~/components/ui/button';
 import {
   Card,
@@ -25,9 +26,9 @@ export function OurConsultingServices({
         <p className="uppercase text-center text-orange-500">
           Don’t Settle For Less
         </p>
-        <PageHeaderHeading className="capitalize text-center md:text-left">
+        <StyledPageHeaderHeading className="capitalize text-center md:text-left">
           Our Consulting Services
-        </PageHeaderHeading>
+        </StyledPageHeaderHeading>
         <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         {showDescription && (
           <PageHeaderDescription className="leading-8 text-center flex flex-col gap-4 ">

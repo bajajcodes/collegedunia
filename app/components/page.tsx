@@ -48,7 +48,9 @@ export function Page({
         <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
           <p className="capitalize font-bold">{pageHeaderCaption}</p>
           <PageHeaderHeading
-            className={cn('capitalize', { 'text-white font-semibold': isDarkBg })}
+            className={cn('capitalize', {
+              'text-white font-semibold': isDarkBg,
+            })}
           >
             {pageHeaderTitle}
           </PageHeaderHeading>
@@ -79,7 +81,7 @@ export function Page({
             src={pageHeaderBackgroundImageURL}
             alt="PageHeader Background"
             className={cn(
-              'w-full h-full object-cover object-center absolute top-0 left-0'
+              'w-full h-full object-cover object-right lg:object-center absolute top-0 left-0'
             )}
           />
         </div>

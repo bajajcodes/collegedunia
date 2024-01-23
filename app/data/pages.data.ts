@@ -1,6 +1,6 @@
 import type { PageInfoProps } from '~/components/page';
 import engineeringAdmissionBGImg from '../images/EngineeringWeb.jpg';
-import managementAdmissionBGImg from '../images/Managementweb.jpg';
+import managementAdmissionBGImg from '../images/management page.jpg';
 import medicalAdmissionBGImg from '../images/MedicalWeb.jpg';
 import {
   engineeringPageTestimonials,

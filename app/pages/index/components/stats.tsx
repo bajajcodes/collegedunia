@@ -1,3 +1,4 @@
+import { StyledPageHeaderHeading } from '~/components/typography';
 import { PageHeaderHeading } from '../../../components/page-header';
 
 const data = [
@@ -14,10 +15,10 @@ export function Stats() {
         <div key={`${item.heading}--${index}`}>
           <p className="uppercase font-medium">{item.heading}</p>
           <hr className="my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderHeading className="capitalize text-educom">
+          <StyledPageHeaderHeading className="capitalize text-educom">
             {item.value}
             {item.symbol}
-          </PageHeaderHeading>
+          </StyledPageHeaderHeading>
         </div>
       ))}
     </section>

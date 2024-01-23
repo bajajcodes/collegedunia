@@ -1,4 +1,5 @@
-import { PageHeader, PageHeaderHeading } from '~/components/page-header';
+import { PageHeader } from '~/components/page-header';
+import { StyledPageHeaderHeading } from '~/components/typography';
 import {
   Card,
   CardDescription,
@@ -18,9 +19,9 @@ export function WhatWeOffer() {
         <p className="uppercase text-center text-orange-300 font-medium">
           Offer
         </p>
-        <PageHeaderHeading className="capitalize text-white">
+        <StyledPageHeaderHeading className="capitalize text-white">
           What We Offer
-        </PageHeaderHeading>
+        </StyledPageHeaderHeading>
         <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
       </PageHeader>
       <article className="grid lg:grid-cols-2 max-w-lg gap-4 p-4 lg:max-w-5xl">
