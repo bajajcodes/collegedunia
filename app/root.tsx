@@ -14,6 +14,7 @@ import { SiteHeader } from './components/site-header';
 import { SiteFooter } from './components/site-footer';
 import { Toaster } from './components/ui/toaster';
 import { WhatsAppButton } from './components/whatsapp-button';
+import { siteConfig } from './config/site';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
@@ -22,10 +23,10 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'CollegeDunia' },
+    { title: siteConfig.name },
     {
       name: 'description',
-      content: 'Welcome to CollegeDunia!',
+      content: `Welcome to ${siteConfig.name}!`,
     },
   ];
 };
