@@ -28,10 +28,10 @@ import { siteConfig } from '~/config/site';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: siteConfig.name },
+    { title: 'Educom Guidance' },
     {
       name: 'description',
-      content: `Welcome to ${siteConfig.name}!`,
+      content: `Welcome to Educom Guidance!`,
     },
   ];
 };
