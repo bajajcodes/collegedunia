@@ -1,4 +1,5 @@
-import { Link, MetaFunction } from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import {
@@ -24,7 +25,6 @@ import aboutUsFourth from '~/images/about-us-4.jpg';
 
 import { navConfig } from '~/config/nav';
 import { StyledPageHeaderHeading } from '~/components/typography';
-import { siteConfig } from '~/config/site';
 
 export const meta: MetaFunction = () => {
   return [

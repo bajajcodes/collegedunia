@@ -1,5 +1,4 @@
-// import { cssBundleHref } from '@remix-run/css-bundle';
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type { LinksFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -14,22 +13,8 @@ import { SiteHeader } from './components/site-header';
 import { SiteFooter } from './components/site-footer';
 import { Toaster } from './components/ui/toaster';
 import { WhatsAppButton } from './components/whatsapp-button';
-import { siteConfig } from './config/site';
 
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: styles },
-  // ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
-];
-
-// export const meta: MetaFunction = () => {
-//   return [
-//     { title: 'Educom Guidance' },
-//     {
-//       name: 'description',
-//       content: `Welcome to Educom Guidance!`,
-//     },
-//   ];
-// };
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 export default function App() {
   return (
@@ -37,8 +22,9 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <title>Educom Guidance</title>
-        <meta name="description" content="Welcome to Educom Guidance!" /> */}
+        <link rel="preconnect" href="https://maps.google.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" />
+        <link rel="preconnect" href="https://maps.googleapis.com" />
         <Meta />
         <Links />
       </head>
