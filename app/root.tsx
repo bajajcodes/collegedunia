@@ -21,15 +21,15 @@ export const links: LinksFunction = () => [
   // ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: 'Educom Guidance' },
-    {
-      name: 'description',
-      content: `Welcome to Educom Guidance!`,
-    },
-  ];
-};
+// export const meta: MetaFunction = () => {
+//   return [
+//     { title: 'Educom Guidance' },
+//     {
+//       name: 'description',
+//       content: `Welcome to Educom Guidance!`,
+//     },
+//   ];
+// };
 
 export default function App() {
   return (
@@ -37,6 +37,8 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Educom Guidance</title>
+        <meta name="description" content="Welcome to Educom Guidance!" />
         <Meta />
         <Links />
       </head>

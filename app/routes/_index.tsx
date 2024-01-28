@@ -26,15 +26,15 @@ import { navConfig } from '~/config/nav';
 import { StyledPageHeaderHeading } from '~/components/typography';
 import { siteConfig } from '~/config/site';
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: 'Educom Guidance' },
-    {
-      name: 'description',
-      content: `Welcome to Educom Guidance!`,
-    },
-  ];
-};
+// export const meta: MetaFunction = () => {
+//   return [
+//     { title: 'Educom Guidance' },
+//     {
+//       name: 'description',
+//       content: `Welcome to Educom Guidance!`,
+//     },
+//   ];
+// };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
