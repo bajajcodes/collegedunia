@@ -16,12 +16,12 @@ export const siteConfig = {
   },
   links: [
     {
-      to: 'https://www.facebook.com/people/Swiatlo-Tech-Pvt-Ltd/100086021268948/',
+      to: 'https://www.facebook.com/EducomGuidance',
       title: 'Facebook',
       Icon: Icons.Facebook,
     },
     {
-      to: 'https://www.instagram.com/swiatlotech1/?igshid=YmMyMTA2M2Y%3D',
+      to: 'https://www.instagram.com/educom_guidance/',
       title: 'Instagram',
       Icon: Icons.Instagram,
     },

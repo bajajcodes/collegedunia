@@ -1,4 +1,5 @@
-import { Link, MetaFunction } from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import {
@@ -24,7 +25,6 @@ import aboutUsFourth from '~/images/about-us-4.jpg';
 
 import { navConfig } from '~/config/nav';
 import { StyledPageHeaderHeading } from '~/components/typography';
-import { siteConfig } from '~/config/site';
 
 export const meta: MetaFunction = () => {
   return [
@@ -54,8 +54,10 @@ export default function Index() {
     <div className="container relative mb-8">
       <section className="relative h-[580px]">
         <PageHeader className="pb-8 absolute top-16 left-1 z-40 w-full max-w-lg ">
-          <p className="capitalize">TAKE YOUR FUTURE TO NEW HEIGHTS</p>
-          <PageHeaderHeading className="capitalize">
+          <p className="capitalize text-white">
+            TAKE YOUR FUTURE TO NEW HEIGHTS
+          </p>
+          <PageHeaderHeading className="capitalize text-white font-semibold">
             Explore expert education consultants for personalized guidance
           </PageHeaderHeading>
           <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
