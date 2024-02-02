@@ -1,19 +1,19 @@
-import { Link } from '@remix-run/react';
-import React from 'react';
+import { Link } from "@remix-run/react";
+import React from "react";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from '~/components/page-header';
-import { buttonVariants } from '~/components/ui/button';
-import { useIsVisible } from '~/hooks/useIsVisible';
-import { cn } from '~/lib/utils';
-import { GetInTouch } from '~/pages/index/components/get-in-touch';
-import { OurConsultingServices } from '~/pages/index/components/our-consulting-services';
-import { Stats } from '~/pages/index/components/stats';
-import type { TestimonialsProps } from '~/pages/index/components/testimonials';
-import { Testimonials } from '~/pages/index/components/testimonials';
-import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
+} from "~/components/page-header";
+import { buttonVariants } from "~/components/ui/button";
+import { useIsVisible } from "~/hooks/useIsVisible";
+import { cn } from "~/lib/utils";
+import { GetInTouch } from "~/pages/index/components/get-in-touch";
+import { OurConsultingServices } from "~/pages/index/components/our-consulting-services";
+import { Stats } from "~/pages/index/components/stats";
+import type { TestimonialsProps } from "~/pages/index/components/testimonials";
+import { Testimonials } from "~/pages/index/components/testimonials";
+import { WhyChooseUs } from "~/pages/index/components/why-choose-us";
 
 export interface PageInfoProps extends TestimonialsProps {
   pageHeaderCaption: string;
@@ -43,13 +43,19 @@ export function Page({
   const getInTouchFormRef = React.useRef<HTMLElement | null>(null);
   const isGetInTouchFormVisible = useIsVisible(getInTouchFormRef);
   return (
-    <div className={cn('relative', className)} {...props}>
+    <div className={cn("relative", className)} {...props}>
       <section className="relative h-[580px]">
         <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
-          <p className="capitalize font-bold">{pageHeaderCaption}</p>
+          <p
+            className={cn("capitalize font-bold", {
+              "text-white": isDarkBg,
+            })}
+          >
+            {pageHeaderCaption}
+          </p>
           <PageHeaderHeading
-            className={cn('capitalize', {
-              'text-white font-semibold': isDarkBg,
+            className={cn("capitalize", {
+              "text-white font-semibold": isDarkBg,
             })}
           >
             {pageHeaderTitle}
@@ -62,8 +68,8 @@ export function Page({
               to={pageHeaderTo}
               className={cn(
                 buttonVariants({
-                  variant: 'outline',
-                  className: 'text-center scroll-smooth',
+                  variant: "outline",
+                  className: "text-center scroll-smooth",
                 })
               )}
             >
@@ -73,7 +79,7 @@ export function Page({
         </PageHeader>
         <div
           className={cn(
-            'w-full h-full relative bg-blend-screen bg-opacity-50',
+            "w-full h-full relative bg-blend-screen bg-opacity-50",
             `bg-[${pageHeaderBackgroundFallbackColor}]`
           )}
         >
@@ -81,7 +87,7 @@ export function Page({
             src={pageHeaderBackgroundImageURL}
             alt="PageHeader Background"
             className={cn(
-              'w-full h-full object-cover object-right lg:object-center absolute top-0 left-0'
+              "w-full h-full object-cover object-right lg:object-center absolute top-0 left-0"
             )}
           />
         </div>
@@ -107,9 +113,9 @@ export function Page({
 
       <section
         ref={getInTouchFormRef}
-        className={cn('mx-4 my-auto mb-4 transition ease-in duration-700', {
-          'opacity-0': !isGetInTouchFormVisible,
-          'opacity-100': isGetInTouchFormVisible,
+        className={cn("mx-4 my-auto mb-4 transition ease-in duration-700", {
+          "opacity-0": !isGetInTouchFormVisible,
+          "opacity-100": isGetInTouchFormVisible,
         })}
         id="get-in-touch-form"
       >
